@@ -2,7 +2,7 @@
 
 [Open the game library →](https://bottleship.happydog.games)
 
-BottleShip runs real x86 Windows games in the browser — no OS image, no plugins, no
+webwindows runs real x86 Windows games in the browser — no OS image, no plugins, no
 server round-trip. It loads a game's PE executable directly and reimplements Windows
 itself (Win32, COM, DirectDraw / Direct3D 3–9, DirectSound) on top of WebGPU, WebAudio
 and OPFS.
@@ -20,7 +20,7 @@ and OPFS.
 
 ## Games running today
 
-BottleShip already runs a range of late-90s / early-2000s titles into gameplay, including
+webwindows already runs a range of late-90s / early-2000s titles into gameplay, including
 Re-Volt, Heroes of Might & Magic III, StarCraft / Brood War, Diablo II, Max Payne, The Elder
 Scrolls III: Morrowind, Harry Potter and the Philosopher's Stone, Need for Speed: Porsche
 Unleashed & Underground, Unreal Gold, Command & Conquer: Tiberian Sun, Discworld Noir, Tomb
@@ -37,7 +37,7 @@ everything else, you bring your own legally-owned copy.
 
 The web has great open emulators for old platforms — DOSBox, ScummVM, Dolphin. But the
 awkward middle — **native Win32 games from ~1997–2004** with no source port, not on modern
-stores, and fussy on current Windows — has no easy home. BottleShip aims squarely at that gap.
+stores, and fussy on current Windows — has no easy home. webwindows aims squarely at that gap.
 
 It gives those games a browser-native runtime without booting a Windows image or a native
 install. **We ship the emulator, not the games:** the online library is demos, shareware and
@@ -45,7 +45,7 @@ other redistributable releases; you import your own legally-owned files locally.
 
 ## How it works
 
-BottleShip doesn't boot Windows. It loads the game's PE executable into a 4 GB guest address
+webwindows doesn't boot Windows. It loads the game's PE executable into a 4 GB guest address
 space, runs its x86 code through a fork of [v86](https://github.com/copy/v86), and intercepts
 every imported Win32 and DirectX call.
 
@@ -127,10 +127,6 @@ covered by reproducible harness tests.
 - Security → [SECURITY.md](SECURITY.md) (private reporting).
 - Anything else, including takedown / legal: **jenissimo+bottleship@gmail.com**.
 
-## Support
-
-BottleShip is free and open source. If it brought a game back to life for you, you can chip in:
-[Ko-fi](https://ko-fi.com/bottleship) · [CloudTips (RU)](https://pay.cloudtips.ru/p/e2362fd1) · [Crypto](https://nowpayments.io/donation/bottleship).
 
 ## Documentation
 
@@ -144,12 +140,4 @@ BottleShip is free and open source. If it brought a game back to life for you, y
 - [Child processes](docs/headless-child-processes.md) — execution, display routing and diagnostics
 - [Performance measurements](docs/performance.md) — workload and correctness contracts
 - [Contributing with coding agents](docs/contributing-with-ai.md)
-
-## License & acknowledgements
-
-BottleShip is licensed under [Apache-2.0](LICENSE). It builds on a fork of
-[v86](https://github.com/copy/v86) (BSD-2) and bundles other open-source components
-(SeaBIOS / VGA BIOS, an FFmpeg-based decoder, fonts) — their licenses and notices are in
-[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
-
-**BottleShip does not distribute commercial game files.** Bring your own legally-owned copies.
+ 
